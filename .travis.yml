@@ -1,6 +1,6 @@
 sudo: required
 
-language: python
+language: generic
 
 services:
     - docker
@@ -12,4 +12,4 @@ before_install:
     - docker ps -a
 
 script:
-
+    - ls

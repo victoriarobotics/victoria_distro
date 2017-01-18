@@ -13,3 +13,9 @@ before_install:
 
 script:
     - ls
+
+after_success:
+    - if [ "$TRAVIS_BRANCH" == "basic-ros1" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker push victoriarobotics/victoriaplatform;
+      fi
